@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HATTORI BOT - Lista de Comandos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .command-card {
+            background-color: #1e293b; /* slate-800 */
+            border: 1px solid #334155; /* slate-700 */
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease-in-out;
+        }
+        .command-card:hover {
+             border-color: #38bdf8; /* sky-400 */
+        }
+        code {
+            background-color: #334155; /* slate-700 */
+            color: #e2e8f0; /* slate-200 */
+            padding: 0.2rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.9em;
+        }
+        .code-block {
+            background-color: #0f172a; /* slate-900 */
+            color: #cbd5e1; /* slate-300 */
+            padding: 1rem;
+            border-radius: 0.5rem;
+            font-family: monospace;
+            white-space: pre-wrap;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-300">
+
+    <div class="container mx-auto px-4 py-8 md:py-12">
+        
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-2">HATTORI BOT</h1>
+            <p class="text-lg text-sky-400">Sua lista de comandos completa</p>
+            <p class="mt-4">Prefixo do Bot: <code class="bg-sky-500/20 text-sky-300 border border-sky-400">.</code></p>
+        </header>
+
+        <main>
+            <!-- SECTIONS -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- RPG ADMIN -->
+                <section id="rpgadmin" class="lg:col-span-2">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-slate-700 pb-2">⚔️ RPG (Admin)</h2>
+                    <div class="space-y-4">
+                        <div class="command-card">
+                            <p><code>.additem &lt;nome&gt; &lt;tipo&gt; &lt;slot&gt; &lt;raridade&gt; [bonus...]</code></p>
+                            <p class="mt-2 text-slate-400">Cria um novo item no jogo.</p>
+                            <div class="mt-3 text-sm">
+                                <p class="font-semibold text-slate-300">Uso:</p>
+                                <div class="code-block mt-1">.additem "Nome do Item" Tipo Slot Raridade stat1:valor1 stat2:valor2 efeito:tipo,valor1,valor2...</div>
+                                <p class="font-semibold text-slate-300 mt-2">Exemplos:</p>
+                                <div class="code-block mt-1">.additem "Elmo de Ferro" Elmo cabeca "⚪ Comum" con:5
+.additem "Adaga Envenenada" Arma arma "💎 Raro" des:7 efeito:on_hit,poison,0.25</div>
+                            </div>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.delitem &lt;nome_item&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Apaga um item permanentemente do jogo.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.giveitem &lt;membro&gt; &lt;quantidade&gt; &lt;nome_item&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Dá um item a um jogador.</p>
+                        </div>
+                         <div class="command-card">
+                            <p><code>.iteminfo &lt;nome_item&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Mostra informações detalhadas sobre um item.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.listallitems</code></p>
+                            <p class="mt-2 text-slate-400">Lista todos os itens existentes no banco de dados para diagnóstico.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.sethp &lt;membro&gt; &lt;hp&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Define o HP atual de um jogador para testes.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- RPG JOGADORES -->
+                <section id="rpgcommands" class="lg:col-span-1">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-slate-700 pb-2">🛡️ RPG (Jogadores)</h2>
+                    <div class="space-y-4">
+                        <div class="command-card">
+                            <p><code>.iniciar</code></p>
+                            <p class="mt-2 text-slate-400">Inicia sua aventura em Aethelgard e cria seu personagem.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.perfil</code></p>
+                            <p class="mt-2 text-slate-400">Mostra o seu perfil de aventureiro.</p>
+                        </div>
+                         <div class="command-card">
+                            <p><code>.inventario</code> (ou <code>.inv</code>)</p>
+                            <p class="mt-2 text-slate-400">Mostra os itens no seu inventário.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.equipar &lt;nome_item&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Equipa um item do seu inventário.</p>
+                        </div>
+                         <div class="command-card">
+                            <p><code>.desequipar &lt;slot&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Desequipa um item de um slot específico.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.usar &lt;nome_item&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Usa um item consumível do seu inventário.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.diario</code></p>
+                            <p class="mt-2 text-slate-400">Resgate sua recompensa diária de +30 Energia.</p>
+                        </div>
+                         <div class="command-card">
+                            <p><code>.explorar &lt;localizacao&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Explora uma área para encontrar monstros e tesouros.</p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- CONFIG -->
+                 <section id="config" class="lg:col-span-3">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-slate-700 pb-2">⚙️ Configuração</h2>
+                     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="command-card">
+                            <p><code>.setcanal &lt;tipo&gt; &lt;canal&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Define o canal para uma função. Tipos: registro, cores, logs.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.setcargo &lt;tipo&gt; &lt;cargo&gt;</code></p>
+                            <p class="mt-2 text-slate-400">Define um cargo para o registro.</p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.statusregistro</code></p>
+                            <p class="mt-2 text-slate-400">Mostra o status da configuração do registro.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CORES -->
+                <section id="cores" class="lg:col-span-1">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-slate-700 pb-2">🎨 Cores</h2>
+                    <div class="space-y-4">
+                        <div class="command-card">
+                            <p><code>.addcolor &lt;cargo&gt; &lt;emoji&gt; &lt;nome&gt;</code></p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.listcolors</code></p>
+                        </div>
+                         <div class="command-card">
+                            <p><code>.removecolor &lt;cargo&gt;</code></p>
+                        </div>
+                        <div class="command-card">
+                            <p><code>.setupcolors</code></p>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- OUTROS -->
+                <section id="outros" class="lg:col-span-2">
+                    <h2 class="text-2xl font-bold text-white mb-4 border-b-2 border-slate-700 pb-2">🤖 Diversos</h2>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div>
+                            <h3 class="font-semibold text-lg text-white mb-2">Moderação</h3>
+                             <div class="command-card">
+                                <p><code>.limpar [quantidade=50]</code></p>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-lg text-white mb-2">Registro</h3>
+                             <div class="command-card">
+                                <p><code>.setup</code></p>
+                            </div>
+                        </div>
+                         <div class="md:col-span-2">
+                            <h3 class="font-semibold text-lg text-white mb-2">Diversão</h3>
+                            <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
+                                <div class="command-card">
+                                    <p><code>.hattori</code></p>
+                                </div>
+                                <div class="command-card">
+                                    <p><code>.anjo</code></p>
+                                </div>
+                                <div class="command-card">
+                                    <p><code>.hevitu</code></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+
+        <footer class="text-center mt-16 text-slate-500">
+            <p>&copy; 2024 HATTORI BOT. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+</body>
+</html>

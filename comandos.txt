@@ -1,0 +1,106 @@
+ HATTORI BOT - LISTA DE COMANDOS 
+========================================
+
+--- CORES ---
+  .addcolor <cargo> <emoji> <nome>
+    -> Sem descrição.
+
+  .listcolors
+    -> Sem descrição.
+
+  .removecolor <cargo>
+    -> Sem descrição.
+
+  .setupcolors
+    -> Sem descrição.
+
+
+--- RPGADMIN ---
+  .additem <nome> <tipo> <slot> <raridade> [bonus...]
+    -> Cria um novo item no jogo.
+Uso: .additem "Nome do Item" Tipo Slot Raridade stat1:valor1 stat2:valor2 efeito:tipo,valor1,valor2...
+Exemplo: .additem "Elmo de Ferro" Elmo cabeca "⚪ Comum" con:5
+Exemplo 2: .additem "Adaga Envenenada" Arma arma "🔵 Raro" des:7 efeito:on_hit,poison,0.25
+
+  .delitem <nome_item>
+    -> Apaga um item permanentemente do jogo.
+
+  .giveitem <member> <quantity> <nome_item>
+    -> Dá um item a um jogador. (Admin)
+
+  .iteminfo <nome_item>
+    -> Mostra informações detalhadas sobre um item.
+
+  .listallitems
+    -> Lista todos os itens existentes no banco de dados para diagnóstico.
+
+  .sethp <member> <hp>
+    -> Define o HP atual de um jogador para testes.
+
+
+--- DIVERSAO ---
+  .anjo
+    -> Sem descrição.
+
+  .hevitu
+    -> Sem descrição.
+
+
+--- RPGCOMMANDS ---
+  .desequipar <slot>
+    -> Desequipa um item de um slot específico.
+
+  .diario
+    -> Resgate sua recompensa diária de +30 Energia.
+
+  .equipar <nome_item>
+    -> Equipa um item do seu inventário.
+
+  .iniciar
+    -> Inicia sua aventura em Aethelgard e cria seu personagem.
+
+  .inventario
+    -> Mostra os itens no seu inventário.
+    (Apelidos: .inv)
+
+  .perfil
+    -> Mostra o seu perfil de aventureiro com status totais.
+
+  .usar <nome_item>
+    -> Usa um item consumível do seu inventário.
+
+
+--- RPGCOMBAT ---
+  .explorar <localizacao>
+    -> Explora uma área para encontrar monstros e tesouros.
+
+
+--- HATTORI ---
+  .hattori
+    -> Inicia uma conversa privada com a IA Hattori.
+
+
+--- MODERACAO ---
+  .limpar [quantidade=50]
+    -> Sem descrição.
+
+
+--- CONFIG ---
+  .setcanal <tipo> <canal>
+    -> Define o canal para uma função específica.
+Uso: .setcanal [registro|cores|logs] #nome-do-canal
+
+  .setcargo <tipo_cargo> <cargo>
+    -> Define um cargo para uma função do registro.
+Uso: .setcargo [tipo] @cargo
+Tipos: menor_18, maior_18, masculino, feminino, azul, preto, branco
+
+  .statusregistro
+    -> Mostra o status da configuração do sistema de registro.
+
+
+--- REGISTRO ---
+  .setup
+    -> Sem descrição.
+
+
